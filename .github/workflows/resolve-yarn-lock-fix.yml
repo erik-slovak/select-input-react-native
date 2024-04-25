@@ -11,11 +11,6 @@ jobs:
     if: contains(github.event.comment.body, '/resolve-test yarn.lock')
 
     steps:
-      - uses: navikt/github-app-token-generator@a3831f44404199df32d8f39f7c0ad9bb8fa18b1c # v1
-        id: get-token
-        with:
-          app-id: ${{ secrets.TXO_GITHUB_BOT_APP_ID }}
-          private-key: ${{ secrets.TXO_GITHUB_BOT_APP_PRIVATE_KEY }}
       - name: Checkout code
         uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4
         with:
