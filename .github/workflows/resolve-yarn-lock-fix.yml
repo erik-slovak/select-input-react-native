@@ -25,6 +25,7 @@ jobs:
 
       - name: Checkout PR branch and merge base branch
         run: |
+          git log --graph --oneline --all -n 20
           git config --global user.email "txo-github-bot[bot]@users.noreply.github.com"
           git config --global user.name "TXO GitHub Bot[bot]"
           git fetch origin ${{ env.BASE_BRANCH }}
