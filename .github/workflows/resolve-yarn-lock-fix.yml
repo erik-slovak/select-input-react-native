@@ -6,12 +6,9 @@ on:
 
 jobs:
   resolve-yarn-lock-on-comment-fix:
+    name: Resolve yarn.lock on comment (test fix)
     runs-on: ubuntu-latest
     if: contains(github.event.comment.body, '/resolve-test yarn.lock')
-    secrets: inherit
-    # with:
-    #   pr_number: ${{ github.event.issue.number }}
-    #   repo: ${{ github.repository }}
 
     steps:
       - uses: navikt/github-app-token-generator@a3831f44404199df32d8f39f7c0ad9bb8fa18b1c # v1
